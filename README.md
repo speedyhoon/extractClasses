@@ -1,7 +1,8 @@
 # extractClasses
 Extract CSS class names &amp; ids from a string
 
-[![go report card](https://goreportcard.com/badge/github.com/speedyhoon/extractClasses)](https://goreportcard.com/report/github.com/speedyhoon/extractClasses) 
+[![Build Status](https://travis-ci.org/speedyhoon/extractClasses.svg?branch=master)](https://travis-ci.org/speedyhoon/extractClasses)
+[![go report card](https://goreportcard.com/badge/github.com/speedyhoon/extractClasses)](https://goreportcard.com/report/github.com/speedyhoon/extractClasses)
 
 ## Installation
 ```go get github.com/speedyhoon/extractClasses```
