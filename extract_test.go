@@ -319,7 +319,8 @@ var testData = map[string][]string{
 	".first-class[lang|=en] .second-class[lang|=en]":             {".first-class", ".second-class"},
 
 	//encoded line breaks
-	"#unused-1\n\n\n\n\t\t\t\t\nz\t\ta": {"#unused-1"},
+	"#unused-1\n\n\n\n\t\t\t\t\nz\t\ta":                   {"#unused-1"},
+	"\n#id\ndiv.first-class\n.second-class\n.third-class": {"#id", ".first-class", ".second-class", ".third-class"},
 
 	//recognises JS escaped strings & repeated dots & hashes
 	"\naaa\n...    .unused-1\n\n\n.unused-2, .unused-3\n\t\t,,,\t###\t\nz\t\ta": {".unused-1", ".unused-2", ".unused-3"},

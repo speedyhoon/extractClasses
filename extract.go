@@ -13,12 +13,13 @@ func Extract(input string) (list []string) {
 	//Replace unwanted whitespace with a single space
 	input = regexp.MustCompile(`[\0'"\\\n\r\v\t\f]`).ReplaceAllString(input, " ")
 
-	chopStart := regexp.MustCompile(`(?mis)^[^\.#]*`)
-	chopEnd := regexp.MustCompile("(?mis)[ ~!@$%^&*()+=,/';:\"?><[\\]{}|`].*")
+	chopStart := regexp.MustCompile(`^[^\.#]*`)
+	chopEnd := regexp.MustCompile("[ ~!@$%^&*()+=,/';:\"?><[\\]{}|`].*")
 
 	for _, rule := range splitAll(input) {
 		rule = chopStart.ReplaceAllLiteralString(rule, "")
 		rule = chopEnd.ReplaceAllLiteralString(rule, "")
+		//ignore invalid rules
 		if rule != "" && rule != "#" && rule != "." {
 			list = append(list, rule)
 		}
@@ -26,7 +27,7 @@ func Extract(input string) (list []string) {
 	return
 }
 
-//ExtractByte extracts class (or id) name from a byte slice
+//ExtractByte extracts class names & ids from a byte slice
 func ExtractByte(input []byte) []string {
 	return Extract(string(input))
 }
