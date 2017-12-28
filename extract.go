@@ -1,3 +1,5 @@
+// Package extractClasses implements functions to extract class names and ids from a string or byte slice.
+// Passing a CSS file directly into either functions is not supported and won't return the expected results
 package extractClasses
 
 import (
@@ -13,7 +15,7 @@ func Extract(input string) (list []string) {
 	//Replace unwanted whitespace with a single space
 	input = regexp.MustCompile(`[\0'"\\\n\r\v\t\f]`).ReplaceAllString(input, " ")
 
-	chopStart := regexp.MustCompile(`^[^\.#]*`)
+	chopStart := regexp.MustCompile(`^[^.#]*`)
 	chopEnd := regexp.MustCompile("[ ~!@$%^&*()+=,/';:\"?><[\\]{}|`].*")
 
 	for _, rule := range splitAll(input) {
@@ -28,7 +30,7 @@ func Extract(input string) (list []string) {
 }
 
 //ExtractByte extracts class names & ids from a byte slice
-func ExtractByte(input []byte) []string {
+func ExtractBytes(input []byte) []string {
 	return Extract(string(input))
 }
 
