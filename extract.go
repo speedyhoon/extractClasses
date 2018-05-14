@@ -29,7 +29,7 @@ func Extract(input string) (list []string) {
 	return
 }
 
-//ExtractByte extracts class names & ids from a byte slice
+//ExtractBytes extracts class names & ids from a byte slice
 func ExtractBytes(input []byte) []string {
 	return Extract(string(input))
 }
