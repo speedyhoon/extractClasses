@@ -22,7 +22,10 @@ func main() {
 	fmt.Printf("%q", extractClasses.Extract(css))
 }
 ```
-Returns: ```[]string{"#id-name", "#second", ".third"}```
+Output
+```go
+["#id-name" "#second" ".third"]
+```
 
 ## Licence
 MIT License (MIT)
