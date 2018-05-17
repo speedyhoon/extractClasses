@@ -22,7 +22,7 @@ func main() {
 	fmt.Printf("%q", extractClasses.Extract(css))
 }
 ```
-Output
+Output:
 ```go
 ["#id-name" "#second" ".third"]
 ```
